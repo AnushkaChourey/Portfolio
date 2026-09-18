@@ -10,13 +10,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+html{
     scroll-behavior: smooth;
 }
 
 body {
     font-family: Arial, sans-serif;
-    background: #eec264;
-    color: #222;
+    background: white;
+    color: black;
     line-height: 1.6;
 }
 
@@ -30,15 +32,6 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.logo span {
-    color: #6c63ff;
 }
 
 nav ul {
@@ -246,10 +239,55 @@ footer {
         width: 240px;
         height: 240px;
     }
+}
+    .contact {
+    background: #eec264;
+}
 
-    .code {
-        display: none;
-    }
+.contact-box form {
+    max-width: 500px;
+    margin: 25px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-box input,
+.contact-box textarea {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+    outline: none;
+}
+
+.contact-box textarea {
+    resize: vertical;
+}
+
+.contact-box input:focus,
+.contact-box textarea:focus {
+    box-shadow: 0 0 0 2px #6c63ff;
+}
+
+.contact-box button {
+    width: 160px;
+    margin: auto;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: #6c63ff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact-box button:hover {
+    background: #5148d8;
 }
 </style>
 </head>
@@ -343,17 +381,49 @@ footer {
         </div>
     </div>
 </section>
+<section class="contact" id="contact">
 
-<section id="contact">
-    <h2 class="title">Contact Me</h2>
+    <h2 class="title">Connect and Contact</h2>
+
+    <p style="text-align: center;">
+        Have a question, idea or just want to say hello?
+        Feel free to connect with me!
+    </p>
 
     <div class="contact-box">
-        <p>Email: anushkachourey25@gmail.com</p>
-        <p>Phone: +91 9329786690</p>
-        <p>Indore, India</p>
-    </div>
-</section>
 
+        <form>
+
+            <input type="text"
+                   placeholder="Your Name"
+                   required>
+
+            <input type="email"
+                   placeholder="Your Email"
+                   required>
+
+            <textarea
+                placeholder="Your Message"
+                rows="5"
+                required></textarea>
+
+            <button type="submit">Send Message</button>
+
+        </form>
+
+    </div>
+
+    <div class="contact-box">
+
+        <p>Email: anushkachourey25@gmail.com</p>
+
+        <p>Phone: +91 9832597086</p>
+
+        <p>Indore, India</p>
+
+    </div>
+
+</section>
 <footer>
     <p>© 2026 Anushka | My Portfolio</p>
 </footer>
