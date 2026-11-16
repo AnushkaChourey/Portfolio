@@ -3,35 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Anushka | IT Student Portfolio</title>
 
 <style>
+
+/* General Styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html{
+
+html {
     scroll-behavior: smooth;
+    scroll-padding-top: 85px;
 }
 
 body {
     font-family: Arial, sans-serif;
-    background: white;
-    color: black;
+    background-color: #f7f3ff;
+    color: #29254a;
     line-height: 1.6;
 }
 
-nav {
-    position: sticky;
+section {
+    padding: 80px 10%;
+    scroll-margin-top: 85px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: #393477;
+    margin-bottom: 40px;
+}
+
+/* Navbar */
+header {
+    position: fixed;
     top: 0;
-    z-index: 100;
-    background: rgb(241, 241, 241);
-    padding: 15px 7%;
-    box-shadow: 0 2px 10px rgba(179, 107, 107, 0.08);
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 15px 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(57, 52, 119, 0.1);
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+    color: #6c63ff;
 }
 
 nav ul {
@@ -40,372 +66,767 @@ nav ul {
     gap: 25px;
 }
 
-nav a {
+nav ul li a {
     text-decoration: none;
-    color: #222;
+    color: #29254a;
     font-weight: bold;
+    transition: 0.3s;
 }
 
-nav a:hover {
+nav ul li a:hover {
     color: #6c63ff;
 }
 
 .menu-btn {
     display: none;
-    font-size: 28px;
+    font-size: 26px;
     cursor: pointer;
+    color: #393477;
 }
 
-section {
-    padding: 80px 7%;
-}
-
-.hero {
-    min-height: 75vh;
+/* Home Section */
+#home {
+    min-height: 100vh;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     gap: 40px;
-    background: rgb(247, 243, 239);
+    padding-top: 110px;
+    background: linear-gradient(120deg, #f1efff, #f7f3ff, #ffffff);
 }
 
-.hero-text {
-    flex: 1;
+.home-content {
+    max-width: 600px;
 }
 
-.hero-text h1 {
+.home-content h1 {
     font-size: 48px;
-    margin: 10px 0;
+    color: #29254a;
+    margin-bottom: 10px;
 }
 
-.hero-text h1 span {
+.home-content h1 span {
     color: #6c63ff;
 }
 
-.hero-text h2 {
-    font-size: 24px;
-    color: #555;
+.home-content h3 {
+    font-size: 22px;
+    color: #6c63ff;
+    margin-bottom: 18px;
 }
 
-.hero-text p {
-    max-width: 600px;
-    margin: 20px 0;
+.home-content p {
+    font-size: 16px;
+    margin-bottom: 25px;
+    color: #55516f;
 }
 
 .btn {
     display: inline-block;
-    background: #6c63ff;
-    color: rgb(240, 239, 247);
-    padding: 12px 22px;
-    border-radius: 25px;
     text-decoration: none;
-    margin-top: 10px;
+    background-color: #6c63ff;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 8px;
+    margin: 5px 8px 5px 0;
+    transition: 0.3s;
 }
 
-.photo-area {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    position: relative;
+.btn:hover {
+    background-color: #393477;
+    transform: translateY(-3px);
 }
 
-.photo-circle {
+.btn-outline {
+    background-color: transparent;
+    color: #6c63ff;
+    border: 2px solid #6c63ff;
+}
+
+.btn-outline:hover {
+    color: white;
+}
+
+.home-image img {
     width: 300px;
     height: 300px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 8px solid white;
-    box-shadow: 0 10px 35px rgba(108,99,255,0.3);
-    animation: appear 1.4s ease-out 1;
-}
-
-.photo-circle img {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
+    border-radius: 50%;
+    border: 8px solid #ffffff;
+    box-shadow: 0 8px 25px rgba(108, 99, 255, 0.2);
 }
 
-@keyframes appear {
-    from { opacity: 0; transform: scale(0.8); }
-    to { opacity: 1; transform: scale(1); }
+/* About Section */
+#about {
+    background-color: #ffffff;
+    min-height: 85vh;
 }
 
-.title {
+.about-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.about-main {
+    background-color: #f1efff;
+    padding: 35px;
+    border-radius: 18px;
+    border-left: 5px solid #6c63ff;
+}
+
+.about-tag {
+    color: #6c63ff;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.about-main h3 {
+    font-size: 27px;
+    color: #393477;
+    margin: 15px 0;
+}
+
+.about-main p {
+    color: #55516f;
+    font-size: 16px;
+}
+
+.about-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-card {
+    background-color: #f7f3ff;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #e5e0ff;
+    flex: 1;
+    transition: 0.3s;
+}
+
+.about-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(108, 99, 255, 0.1);
+}
+
+.about-card h3 {
+    color: #6c63ff;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.about-card p {
+    color: #55516f;
+}
+
+.about-bottom {
+    grid-column: 1 / -1;
+    background-color: #f1efff;
+    padding: 25px 30px;
+    border-radius: 15px;
+    border: 1px solid #e5e0ff;
+}
+
+.about-bottom h3 {
+    color: #393477;
+    margin-bottom: 8px;
+}
+
+.about-bottom p {
+    color: #55516f;
+}
+
+/* Education Section */
+#education {
+    background-color: #f7f3ff;
+}
+
+.education-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.education-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    width: 45%;
+    min-width: 280px;
+    box-shadow: 0 5px 18px rgba(57, 52, 119, 0.08);
+    border-top: 4px solid #6c63ff;
+    transition: 0.3s;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+}
+
+.education-label {
+    color: #6c63ff;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.education-card h3 {
+    color: #393477;
+    margin: 12px 0;
+    font-size: 21px;
+}
+
+.education-card p {
+    color: #55516f;
+    margin: 6px 0;
+}
+
+/* Skills Section */
+#skills {
+    background-color: #ffffff;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.skill-card {
+    background-color: #f7f3ff;
+    padding: 25px 20px;
+    border-radius: 14px;
     text-align: center;
-    margin-bottom: 35px;
-    font-size: 32px;
+    border: 1px solid #e5e0ff;
+    transition: 0.3s;
 }
 
-.about {
-    background: white;
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(108, 99, 255, 0.12);
 }
 
-.about-box {
-    max-width: 850px;
+.skill-card h3 {
+    color: #6c63ff;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.skill-card p {
+    color: #55516f;
+    font-size: 14px;
+}
+
+/* Projects Section */
+#projects {
+    background-color: #f1efff;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.project-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    border-top: 5px solid #6c63ff;
+    box-shadow: 0 5px 18px rgba(57, 52, 119, 0.08);
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 22px rgba(108, 99, 255, 0.15);
+}
+
+.project-number {
+    color: #6c63ff;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.project-card h3 {
+    color: #393477;
+    font-size: 23px;
+    margin: 12px 0;
+}
+
+.project-card p {
+    color: #55516f;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #f7f3ff;
+}
+
+.contact-container {
+    max-width: 650px;
     margin: auto;
     text-align: center;
 }
 
-.skills {
+.contact-container p {
+    margin-bottom: 12px;
+    color: #55516f;
+}
+
+.contact-container a {
+    color: #6c63ff;
+    text-decoration: none;
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.social-links .btn {
+    color: white;
+}
+
+.social-links .btn-outline {
+    color: #6c63ff;
+}
+
+.social-links .btn-outline:hover {
+    color: white;
+}
+
+/* Contact Form */
+.contact-form {
+    margin-top: 25px;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 15px;
 }
 
-.skill {
-    background: white;
-    padding: 14px 22px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    font-weight: bold;
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d8d2f5;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    outline: none;
 }
 
-.projects {
-    background: white;
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #6c63ff;
 }
 
-.project-container {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
 }
 
-.project-card {
-    background: #eaf4ff;
-    padding: 25px;
-    width: 280px;
-    border-radius: 15px;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+.contact-form button {
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    padding: 13px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.project-card h3 {
-    color: #6c63ff;
-    margin-bottom: 10px;
+.contact-form button:hover {
+    background-color: #393477;
 }
 
-.contact-box {
-    text-align: center;
-}
-
-.contact-box p {
-    margin: 10px;
-}
-
+/* Footer */
 footer {
-    background: #222;
-    color: peachpuff;
+    background-color: #29254a;
+    color: white;
     text-align: center;
     padding: 20px;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
-    nav ul {
-        display: none;
-        position: absolute;
-        top: 62px;
-        right: 5%;
-        background: white;
-        width: 190px;
-        padding: 15px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-        border-radius: 10px;
-    }
 
-    nav ul.show {
-        display: block;
-    }
-
-    nav li {
-        margin: 12px 0;
+    header {
+        padding: 15px 6%;
     }
 
     .menu-btn {
         display: block;
     }
 
-    .hero {
+    nav ul {
+        display: none;
         flex-direction: column;
+        position: absolute;
+        top: 65px;
+        right: 0;
+        width: 100%;
+        background-color: #ffffff;
+        padding: 20px;
         text-align: center;
-        padding-top: 60px;
+        box-shadow: 0 5px 10px rgba(57, 52, 119, 0.1);
+        gap: 18px;
     }
 
-    .hero-text h1 {
-        font-size: 38px;
+    nav ul.show {
+        display: flex;
     }
 
-    .photo-circle {
-        width: 240px;
-        height: 240px;
+    section {
+        padding: 70px 7%;
+    }
+
+    #home {
+        flex-direction: column-reverse;
+        text-align: center;
+        justify-content: center;
+        padding-top: 110px;
+        gap: 30px;
+    }
+
+    .home-content h1 {
+        font-size: 36px;
+    }
+
+    .home-image img {
+        width: 220px;
+        height: 220px;
+    }
+
+    #about {
+        min-height: 100vh;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-main {
+        padding: 28px;
+    }
+
+    .about-main h3 {
+        font-size: 24px;
+    }
+
+    .about-bottom {
+        grid-column: auto;
+    }
+
+    .education-card {
+        width: 100%;
+    }
+
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
     }
 }
-    .contact {
-    background: #eec264;
+
+@media (max-width: 380px) {
+
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .home-content h1 {
+        font-size: 31px;
+    }
+
+    .btn {
+        margin: 5px;
+    }
 }
 
-.contact-box form {
-    max-width: 500px;
-    margin: 25px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.contact-box input,
-.contact-box textarea {
-    width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    font-family: Arial, sans-serif;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
-    outline: none;
-}
-
-.contact-box textarea {
-    resize: vertical;
-}
-
-.contact-box input:focus,
-.contact-box textarea:focus {
-    box-shadow: 0 0 0 2px #6c63ff;
-}
-
-.contact-box button {
-    width: 160px;
-    margin: auto;
-    padding: 12px;
-    border: none;
-    border-radius: 25px;
-    background: #6c63ff;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.contact-box button:hover {
-    background: #5148d8;
-}
 </style>
 </head>
 
 <body>
 
-<nav>
+<!-- Navbar -->
+<header>
+    <div class="logo">Anushka.</div>
+
     <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
-    <ul id="navMenu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+    <nav>
+        <ul id="navMenu">
+            <li><a href="#home" onclick="closeMenu()">Home</a></li>
+            <li><a href="#about" onclick="closeMenu()">About</a></li>
+            <li><a href="#education" onclick="closeMenu()">Education</a></li>
+            <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+            <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+            <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-<section class="hero" id="home">
-    <div class="hero-text">
-        <h1>Hello, I'm</h1>
-        <h1><span>Anushka</span></h1>
-        <h2>Integrated M.Tech IT Student & Future Developer</h2>
+<!-- Home Section -->
+<section id="home">
+
+    <div class="home-content">
+
+        <h1>Hi, I'm <span>Anushka</span></h1>
+
+        <h3>IT Student & Aspiring Developer</h3>
+
         <p>
-            I'm currently learning programming, web development and
-            problem solving. This portfolio is a small representation
-            of my learning journey.
+            I am a second-year Integrated M.Tech Information Technology student
+            who is passionate about learning programming and web development.
+            Welcome to my personal portfolio!
         </p>
-        <a class="btn" href="#projects">View My Work</a>
+
+        <a href="#projects" class="btn">View My Projects</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+
     </div>
 
-    <div class="photo-area">
+    <div class="home-image">
+        <img src="image.jpg" alt="Anushka's Profile Photo">
+    </div>
 
-        <div class="photo-circle">
-            <img src="image.jpg" alt="Anushka's photo">
+</section>
+
+<!-- About Section -->
+<section id="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-container">
+
+        <div class="about-main">
+            <span class="about-tag">GET TO KNOW ME</span>
+
+            <h3>A little about who I am.</h3>
+
+            <p>
+                Hello! I am Anushka, a second-year Integrated M.Tech
+                Information Technology student at IIPS, DAVV, Indore.
+                I am currently building my knowledge in programming
+                and web development.
+            </p>
+            <br>
+            <p>
+                I enjoy learning how websites work and creating simple
+                projects using different technologies. I believe in
+                learning step by step and improving through practice.
+            </p>
         </div>
+
+        <div class="about-details">
+
+            <div class="about-card">
+                <h3>My Journey</h3>
+                <p>
+                    I am currently pursuing Integrated M.Tech in
+                    Information Technology at IIPS, DAVV, Indore.
+                    My journey is focused on learning new concepts
+                    and developing my technical knowledge.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <h3>My Interests</h3>
+                <p>
+                    I am interested in programming, web development
+                    and exploring new technologies. I enjoy creating
+                    simple websites and learning how different
+                    technologies work together.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="about-bottom">
+            <h3>What I'm Working Towards</h3>
+
+            <p>
+                My goal is to keep learning, improve my technical skills
+                and gain practical experience through projects and
+                collaboration. I want to become more confident in
+                problem-solving and development.
+            </p>
+        </div>
+
     </div>
+
 </section>
 
-<section class="about" id="about">
-    <h2 class="title">About Me</h2>
-    <div class="about-box">
-        <p>
-            I am a second-year M.Tech Information Technology student.
-            I am exploring coding and web development step by step.
-            My goal is to keep learning, build useful projects and
-            become a confident IT professional.
+<!-- Education Section -->
+<section id="education">
 
-        </p>
+    <h2 class="section-title">My Education</h2>
+
+    <div class="education-container">
+
+        <div class="education-card">
+            <span class="education-label">COLLEGE EDUCATION</span>
+
+            <h3>Integrated M.Tech – Information Technology</h3>
+
+            <p><strong>Institute:</strong> IIPS, DAVV, Indore</p>
+            <p><strong>Year:</strong> 2nd Year</p>
+        </div>
+
+        <div class="education-card">
+            <span class="education-label">SCHOOL EDUCATION</span>
+
+            <h3>Class 1st – 12th</h3>
+
+            <p><strong>School:</strong> St. Joseph's Convent Hr. Sec. School</p>
+            <p><strong>Board:</strong> CBSE</p>
+            <p><strong>Class 10th:</strong> 91%</p>
+            <p><strong>Class 12th:</strong> 86%</p>
+        </div>
+
     </div>
+
 </section>
 
+<!-- Skills Section -->
 <section id="skills">
-    <h2 class="title">My Skills</h2>
-    <div class="skills">
-        <div class="skill">HTML</div>
-        <div class="skill">CSS</div>
-        <div class="skill">JavaScript</div>
-        <div class="skill">C</div>
-        <div class="skill">C++</div>
-        <div class="skill">DSA Basics</div>
+
+    <h2 class="section-title">My Skills</h2>
+
+    <div class="skills-container">
+
+        <div class="skill-card">
+            <h3>HTML</h3>
+            <p>Building the structure and content of web pages.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>CSS</h3>
+            <p>Styling web pages with layouts, colours and design.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>JavaScript</h3>
+            <p>Adding interactive features to websites.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>C Programming</h3>
+            <p>Understanding programming fundamentals and logic.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>C++</h3>
+            <p>Learning object-oriented programming concepts.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>DSA Basics</h3>
+            <p>Exploring data structures and problem-solving.</p>
+        </div>
+
     </div>
+
 </section>
 
-<section class="projects" id="projects">
-    <h2 class="title">My Projects</h2>
+<!-- Projects Section -->
+<section id="projects">
 
-    <div class="project-container">
+    <h2 class="section-title">My Projects</h2>
+
+    <div class="projects-container">
+
         <div class="project-card">
-            <h3>PetCare Hub</h3>
+            <span class="project-number">PROJECT 01</span>
+
+            <h3>Brew & Bytes</h3>
+
             <p>
-                A pet care and services website designed as a
-                college front-end project.
+                A cafe website designed using HTML, CSS and JavaScript.
+                It includes a menu section, cafe information and
+                interactive features to improve the user experience.
             </p>
         </div>
 
         <div class="project-card">
-            <h3>Cyber Awareness Portal</h3>
-            <p>
-                A simple website concept for spreading awareness
-                about cyber safety and responsible internet use.
-            </p>
-        </div>
+            <span class="project-number">PROJECT 02</span>
 
-        <div class="project-card">
             <h3>Portfolio Website</h3>
+
             <p>
-                My personal responsive portfolio created while
-                learning web development.
+                A personal portfolio website created using HTML and CSS
+                to showcase my introduction, education, skills and projects.
             </p>
         </div>
+
     </div>
+
 </section>
-<section class="contact" id="contact">
 
-    <h2 class="title">Connect and Contact</h2>
+<!-- Contact Section -->
+<section id="contact">
 
-    <p style="text-align: center;">
-        Have a question, idea or just want to say hello?
-        Feel free to connect with me!
-    </p>
+    <h2 class="section-title">Connect and Contact</h2>
 
-    <div class="contact-box">
+    <div class="contact-container">
 
-        <form>
+        <p>
+            <strong>Email:</strong>
+            <a href="mailto:anushkachourey25@gmail.com">
+                anushkachourey25@gmail.com
+            </a>
+        </p>
+
+        <p><strong>Location:</strong> Indore, India</p>
+
+        <!-- GitHub and LinkedIn Links -->
+        <div class="social-links">
+
+            <a href="https://github.com/AnushkaChourey"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-outline">
+                GitHub
+            </a>
+
+            <a href="https://www.linkedin.com/in/anushka-chourey-610697428?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-outline">
+                LinkedIn
+            </a>
+
+        </div>
+
+        <!-- Contact Form -->
+        <form class="contact-form"
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              method="POST">
 
             <input type="text"
+                   name="name"
                    placeholder="Your Name"
                    required>
 
             <input type="email"
+                   name="email"
                    placeholder="Your Email"
                    required>
 
-            <textarea
-                placeholder="Your Message"
-                rows="5"
-                required></textarea>
+            <textarea name="message"
+                      placeholder="Your Message"
+                      required></textarea>
 
             <button type="submit">Send Message</button>
 
@@ -413,27 +834,25 @@ footer {
 
     </div>
 
-    <div class="contact-box">
-
-        <p>Email: anushkachourey25@gmail.com</p>
-
-        <p>Phone: +91 9832597086</p>
-
-        <p>Indore, India</p>
-
-    </div>
-
 </section>
+
+<!-- Footer -->
 <footer>
-    <p>© 2026 Anushka | My Portfolio</p>
+    <p>© 2026 Anushka | All Rights Reserved</p>
 </footer>
 
 <script>
+
+/* Mobile Navigation */
 function toggleMenu() {
-    var menu = document.getElementById("navMenu");
-    menu.classList.toggle("show");
+    document.getElementById("navMenu").classList.toggle("show");
 }
+
+function closeMenu() {
+    document.getElementById("navMenu").classList.remove("show");
+}
+
 </script>
 
 </body>
-</html>
+               </html>
